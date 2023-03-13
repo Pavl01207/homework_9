@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 8</title>
+</head>
+
+<body>
+	<script>
+		//Підрахувати кількість цін, що більше за 1000
+		//створюємо масив 
+		const userElements = parseInt(prompt('Введіть кількість цін'))
+		//функція для створення рандомного числа
+		function getRandomPrice() {
+			return 1 + Math.floor(Math.random() * 10000)
+		}
+		function makeArray(number) {
+			let arr = []
+			for (let i = 0; i < number; i++) {
+				const element = getRandomPrice()
+				arr.push(element)
+			}
+			return arr
+		}
+		const pricesArray = makeArray(userElements)
+		document.write(`<p>Створений масив: <span>${pricesArray}</span>.</p>`)
+		//кількість цін, що більше за 1000
+		const numberOfPricesBiggest_1000 = pricesArray.reduce(
+			(prevNumber, element, index, baseArr) => {
+				if (element > 1000) prevNumber++
+				return prevNumber
+			}, 0)
+		document.write(`<p>Кількість цін, що більше за 1000: <span>${numberOfPricesBiggest_1000}</span>.</p>`)
+	</script>
+</body>
+</html>

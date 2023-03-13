@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:regular,700&display=swap);
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-size: 1.25rem;
+	font-family: "Raleway",serif;
+	color: #14213d;
+	background-color: #84a98c;
+}
+span {
+	font-weight: 700;
+	color: #9a031e;
+	font-size: 1.5rem;
+}
+table, td {border: 1px solid #9a031e;}
+td {padding: 5px;}

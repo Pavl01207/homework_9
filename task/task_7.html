@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 7</title>
+</head>
+
+<body>
+	<script>
+		//Визначати, чи усі ціни більше за 1000
+		//створюємо масив 
+		const userElements = parseInt(prompt('Введіть кількість цін'))
+		//функція для створення рандомного числа
+		function getRandomPrice() {
+			return 1 + Math.floor(Math.random() * 10000)
+		}
+		function makeArray(number) {
+			let arr = []
+			for (let i = 0; i < number; i++) {
+				const element = getRandomPrice()
+				arr.push(element)
+			}
+			return arr
+		}
+		const pricesArray = makeArray(userElements)
+		document.write(`<p>Створений масив: <span>${pricesArray}</span>.</p>`)
+		const result = pricesArray.every(element => element > 1000)
+		const resultMessage = result ? '<p>Усі ціни <span>більші</span> за 1000.</p>' : '<p>Усі ціни не є <span>більші</span> за 1000.</p>'
+		document.write(resultMessage)
+	</script>
+</body>
+</html>
